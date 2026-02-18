@@ -1,0 +1,21 @@
+Shift Filter = 
+VAR SelectedShift =
+    SELECTEDVALUE ( ShiftSelector[ShiftSelected] )
+VAR ShiftStart =
+    SELECTEDVALUE ( StartTimeTable[StartTime_Converted] )
+VAR ShiftEnd =
+    SELECTEDVALUE ( EndTimeTable[EndTime_Converted] )
+VAR EventTime =
+    IF (
+        HASONEVALUE ( EDInformation[Hour of Presentation] ),
+        VALUES ( EDInformation[Hour of Presentation] ),
+        MAX ( EDInformation[Hour of Presentation] )
+    )
+VAR CurrentShift =
+    IF (
+        ShiftStart > ShiftEnd,
+        IF ( EventTime >= ShiftStart || EventTime <= ShiftEnd, "Overnight", "Daytime" ),
+        IF ( EventTime >= ShiftStart && EventTime <= ShiftEnd, "Overnight", "Daytime" )
+    )
+RETURN
+    SWITCH ( TRUE (), SelectedShift = "All", 1, SelectedShift = CurrentShift, 1, 0 )

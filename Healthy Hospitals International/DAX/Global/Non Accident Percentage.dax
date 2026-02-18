@@ -1,0 +1,2 @@
+Non Accident Percentage = 
+DIVIDE([Not Accidents], [Total Accident Column])

@@ -1,0 +1,2 @@
+Accident Percentage = 
+DIVIDE([Accidents], [Total Accident Column])

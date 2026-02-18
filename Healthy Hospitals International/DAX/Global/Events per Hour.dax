@@ -1,0 +1,2 @@
+Events per Hour = 
+DIVIDE ([Total Record Count], ( 365 * 24 ))

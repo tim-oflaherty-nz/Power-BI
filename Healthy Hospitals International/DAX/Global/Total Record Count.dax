@@ -1,0 +1,21 @@
+Total Record Count = 
+VAR SelectedTriageLevel =
+    SELECTEDVALUE ( 'Acuity Selector'[Acuity Level] )
+RETURN
+    CALCULATE (
+        COUNTROWS ( EDInformation ),
+        FILTER (
+            EDInformation,
+            [Shift Filter] = 1 &&
+            SWITCH (
+                TRUE(),
+                SelectedTriageLevel = 0, EDInformation[Triage Level] = 0,
+                SelectedTriageLevel = 1, EDInformation[Triage Level] IN { 1, 2, 3, 4, 5 },
+                SelectedTriageLevel = 2, EDInformation[Triage Level] IN { 2, 3, 4, 5 },
+                SelectedTriageLevel = 3, EDInformation[Triage Level] IN { 3, 4, 5 },
+                SelectedTriageLevel = 4, EDInformation[Triage Level] IN { 4, 5 },
+                SelectedTriageLevel = 5, EDInformation[Triage Level] = 5,
+                FALSE()
+            )
+        )
+    )

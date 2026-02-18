@@ -1,0 +1,61 @@
+Triage Event Counts = 
+VAR SelectedTriageLevel =
+    SELECTEDVALUE ( EDInformation[Triage Level] )
+RETURN
+    SWITCH (
+        TRUE (),
+        SelectedTriageLevel = 0,
+            SUMX (
+                FILTER ( EDInformation, EDInformation[Triage Level] = 0 && [Shift Filter] = 1 ),
+                EDInformation[Event Counts]
+            ),
+        SelectedTriageLevel = 1,
+            SUMX (
+                FILTER (
+                    EDInformation,
+                    EDInformation[Triage Level]
+                        IN { 1, 2, 3, 4, 5 }
+                            && [Shift Filter] = 1
+                ),
+                EDInformation[Event Counts]
+            ),
+        SelectedTriageLevel = 2,
+            SUMX (
+                FILTER (
+                    EDInformation,
+                    EDInformation[Triage Level]
+                        IN { 2, 3, 4, 5 }
+                            && [Shift Filter] = 1
+                ),
+                EDInformation[Event Counts]
+            ),
+        SelectedTriageLevel = 3,
+            SUMX (
+                FILTER (
+                    EDInformation,
+                    EDInformation[Triage Level]
+                        IN { 3, 4, 5 }
+                            && [Shift Filter] = 1
+                ),
+                EDInformation[Event Counts]
+            ),
+        SelectedTriageLevel = 4,
+            SUMX (
+                FILTER (
+                    EDInformation,
+                    EDInformation[Triage Level]
+                        IN { 4, 5 }
+                            && [Shift Filter] = 1
+                ),
+                EDInformation[Event Counts]
+            ),
+        SelectedTriageLevel = 5,
+            SUMX (
+                FILTER ( EDInformation, EDInformation[Triage Level] = 5 && [Shift Filter] = 1 ),
+                EDInformation[Event Counts]
+            ),
+        SUMX (
+            FILTER ( EDInformation, [Shift Filter] = 1 ),
+            EDInformation[Event Counts]
+        )
+    )

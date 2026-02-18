@@ -1,0 +1,2 @@
+Shift Filter Flag = 
+IF ( [Shift Filter] = 1, TRUE (), FALSE () )

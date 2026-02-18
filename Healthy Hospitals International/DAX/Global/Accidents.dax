@@ -1,0 +1,48 @@
+Accidents = 
+VAR SelectedAcuityLevel =
+    SELECTEDVALUE ( 'Acuity Selector'[Acuity Level] )
+VAR SelectedMetric =
+    SELECTEDVALUE ( 'Measure Selector'[Measure] )
+RETURN
+    SWITCH (
+        TRUE (),
+        SelectedMetric = "Volume",
+            CALCULATE (
+                SUM ( EDInformation[Volume] ),
+                FILTER (
+                    EDInformation,
+                    [Shift Filter] = 1
+                        && EDInformation[Accident] = 1
+                        && SWITCH (
+                            TRUE (),
+                            SelectedAcuityLevel = 0, EDInformation[Triage Level] = 0,
+                            SelectedAcuityLevel = 1, EDInformation[Triage Level] IN { 1, 2, 3, 4, 5 },
+                            SelectedAcuityLevel = 2, EDInformation[Triage Level] IN { 2, 3, 4, 5 },
+                            SelectedAcuityLevel = 3, EDInformation[Triage Level] IN { 3, 4, 5 },
+                            SelectedAcuityLevel = 4, EDInformation[Triage Level] IN { 4, 5 },
+                            SelectedAcuityLevel = 5, EDInformation[Triage Level] = 5,
+                            FALSE ()
+                        )
+                )
+            ),
+        SelectedMetric = "Event Counts",
+            CALCULATE (
+                SUM ( EDInformation[Event Counts] ),
+                FILTER (
+                    EDInformation,
+                    [Shift Filter] = 1
+                        && EDInformation[Accident] = 1
+                        && SWITCH (
+                            TRUE (),
+                            SelectedAcuityLevel = 0, EDInformation[Triage Level] = 0,
+                            SelectedAcuityLevel = 1, EDInformation[Triage Level] IN { 1, 2, 3, 4, 5 },
+                            SelectedAcuityLevel = 2, EDInformation[Triage Level] IN { 2, 3, 4, 5 },
+                            SelectedAcuityLevel = 3, EDInformation[Triage Level] IN { 3, 4, 5 },
+                            SelectedAcuityLevel = 4, EDInformation[Triage Level] IN { 4, 5 },
+                            SelectedAcuityLevel = 5, EDInformation[Triage Level] = 5,
+                            FALSE ()
+                        )
+                )
+            ),
+        BLANK ()
+    )

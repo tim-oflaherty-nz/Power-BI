@@ -1,0 +1,54 @@
+LoS Breach Rate = 
+VAR SelectedAcuityLevel =
+    SELECTEDVALUE ( 'Acuity Selector'[Acuity Level] )
+VAR SelectedMetric =
+    SELECTEDVALUE ( 'Measure Selector'[Measure] )
+VAR BreachNumerator =
+    CALCULATE (
+        SWITCH (
+            TRUE (),
+            SelectedMetric = "Volume", SUM ( EDInformation[Volume] ),
+            SelectedMetric = "Event Counts", SUM ( EDInformation[Event Counts] ),
+            SUM ( EDInformation[Event Counts] ) // Default fallback
+        ),
+        FILTER (
+            EDInformation,
+            [Shift Filter] = 1
+                && EDInformation[LoS>6hr] = 1
+                && SWITCH (
+                    TRUE (),
+                    SelectedAcuityLevel = 0, EDInformation[Triage Level] = 0,
+                    SelectedAcuityLevel = 1, EDInformation[Triage Level] IN { 1, 2, 3, 4, 5 },
+                    SelectedAcuityLevel = 2, EDInformation[Triage Level] IN { 2, 3, 4, 5 },
+                    SelectedAcuityLevel = 3, EDInformation[Triage Level] IN { 3, 4, 5 },
+                    SelectedAcuityLevel = 4, EDInformation[Triage Level] IN { 4, 5 },
+                    SelectedAcuityLevel = 5, EDInformation[Triage Level] = 5,
+                    FALSE ()
+                )
+        )
+    )
+VAR BreachDenominator =
+    CALCULATE (
+        SWITCH (
+            TRUE (),
+            SelectedMetric = "Volume", SUM ( EDInformation[Volume] ),
+            SelectedMetric = "Event Counts", SUM ( EDInformation[Event Counts] ),
+            SUM ( EDInformation[Event Counts] )
+        ),
+        FILTER (
+            EDInformation,
+            [Shift Filter] = 1
+                && SWITCH (
+                    TRUE (),
+                    SelectedAcuityLevel = 0, EDInformation[Triage Level] = 0,
+                    SelectedAcuityLevel = 1, EDInformation[Triage Level] IN { 1, 2, 3, 4, 5 },
+                    SelectedAcuityLevel = 2, EDInformation[Triage Level] IN { 2, 3, 4, 5 },
+                    SelectedAcuityLevel = 3, EDInformation[Triage Level] IN { 3, 4, 5 },
+                    SelectedAcuityLevel = 4, EDInformation[Triage Level] IN { 4, 5 },
+                    SelectedAcuityLevel = 5, EDInformation[Triage Level] = 5,
+                    FALSE ()
+                )
+        )
+    )
+RETURN
+    DIVIDE ( BreachNumerator, BreachDenominator, 0 )
