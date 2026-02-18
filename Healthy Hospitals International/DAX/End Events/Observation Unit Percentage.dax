@@ -1,0 +1,2 @@
+Observation Unit Percentage = 
+DIVIDE([Observation Unit], [Total End Events])

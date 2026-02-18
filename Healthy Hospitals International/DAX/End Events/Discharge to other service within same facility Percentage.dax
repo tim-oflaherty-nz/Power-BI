@@ -1,0 +1,2 @@
+Discharge to other service within same facility Percentage = 
+DIVIDE([Discharge to other service within same facility], [Total End Events])

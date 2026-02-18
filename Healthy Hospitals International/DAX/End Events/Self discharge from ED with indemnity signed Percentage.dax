@@ -1,0 +1,2 @@
+Self discharge from ED with indemnity signed Percentage = 
+DIVIDE([Self discharge from ED with indemnity signed], [Total End Events])

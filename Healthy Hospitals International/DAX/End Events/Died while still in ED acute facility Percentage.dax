@@ -1,0 +1,2 @@
+Died while still in ED acute facility Percentage = 
+DIVIDE([Died while still in ED acute facility] ,[Total End Events])

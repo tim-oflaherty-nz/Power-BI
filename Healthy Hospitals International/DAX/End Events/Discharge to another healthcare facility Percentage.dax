@@ -1,0 +1,2 @@
+Discharge to another healthcare facility Percentage =
+DIVIDE([Discharge to another healthcare facility],[Total End Events])

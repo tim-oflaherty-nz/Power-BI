@@ -1,0 +1,2 @@
+Change of Funder Percentage = 
+DIVIDE([Change of Funder End Event] ,[Total End Events])

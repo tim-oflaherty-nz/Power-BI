@@ -1,0 +1,2 @@
+Routine discharge Percentage = 
+DIVIDE([Routine discharge from an Emergency department acute facility], [Total End Events])
