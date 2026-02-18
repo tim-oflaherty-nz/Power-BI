@@ -1,0 +1,2 @@
+First Appointment Percentage = 
+DIVIDE ( [First Appointment], [Total Appointments] )

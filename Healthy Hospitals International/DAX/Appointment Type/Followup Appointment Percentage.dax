@@ -1,0 +1,2 @@
+Followup Appointment Percentage = 
+DIVIDE ( [Followup Appointment], [Total Appointments] )
