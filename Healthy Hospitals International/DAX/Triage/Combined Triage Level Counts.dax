@@ -1,0 +1,12 @@
+Combined Triage Level Counts = 
+VAR SelectedAcuityLevel =
+    SELECTEDVALUE ( 'Acuity Selector'[Acuity Level] )
+RETURN
+    CALCULATE (
+        COUNTROWS ( EDInformation ),
+        FILTER (
+            EDInformation,
+            [Shift Filter] = 1 &&
+            EDInformation[Triage Level] >= SelectedAcuityLevel
+        )
+    )

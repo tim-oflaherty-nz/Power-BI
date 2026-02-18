@@ -1,0 +1,2 @@
+Combined Triage Percentage = 
+DIVIDE ([Combined Triage Level Counts], [Total Triage Levels])

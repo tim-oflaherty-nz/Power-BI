@@ -1,0 +1,5 @@
+Triage 2 = 
+CALCULATE (
+    COUNTROWS ( EDInformation ),
+    FILTER ( EDInformation, [Shift Filter] = 1 && EDInformation[Triage Level] = 2 )
+)
