@@ -1,0 +1,2 @@
+Admit Percentage = 
+DIVIDE ( [Admit Disposition], [Total Dispositions] )

@@ -1,0 +1,2 @@
+Did Not Admit Percentage = 
+DIVIDE([Did Not Admit Disposition], [Total Dispositions])

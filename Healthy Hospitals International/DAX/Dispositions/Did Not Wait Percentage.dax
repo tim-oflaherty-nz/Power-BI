@@ -1,0 +1,2 @@
+Did Not Wait Percentage = 
+DIVIDE([Did Not Wait Disposition], [Total Dispositions])

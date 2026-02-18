@@ -1,0 +1,2 @@
+﻿Died Percentage = 
+DIVIDE([Died Disposition], [Total Dispositions])

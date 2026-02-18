@@ -1,0 +1,2 @@
+Self-Discharge with Indemnity Percentage = 
+DIVIDE([Self-Discharge with Indemnity Disposition], [Total Dispositions])

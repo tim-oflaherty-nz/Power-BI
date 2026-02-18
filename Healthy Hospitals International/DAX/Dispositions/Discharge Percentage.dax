@@ -1,0 +1,2 @@
+Discharge Percentage = 
+DIVIDE([Discharge Disposition], [Total Dispositions])

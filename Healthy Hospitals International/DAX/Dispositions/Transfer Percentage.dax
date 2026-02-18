@@ -1,0 +1,2 @@
+Transfer Percentage = 
+DIVIDE([Transfer Disposition], [Total Dispositions])
