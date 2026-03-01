@@ -1,0 +1,5 @@
+Other Medication Count = 
+CALCULATE (
+    COUNTROWS ( 'Call Log' ),
+    'Call Log'[Type of Intervention] = "Other Medication"
+)

@@ -1,0 +1,5 @@
+Resident Handover Count = 
+CALCULATE (
+    COUNTROWS ( 'Call Log' ),
+    'Call Log'[Type of Intervention] = "Resident Handover"
+)

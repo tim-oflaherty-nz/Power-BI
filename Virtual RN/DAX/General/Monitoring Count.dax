@@ -1,0 +1,5 @@
+Monitoring Count = 
+CALCULATE (
+    COUNTROWS ( 'Call Log' ),
+    'Call Log'[Type of Intervention] = "Monitoring"
+)

@@ -1,0 +1,5 @@
+Assessment Count = 
+CALCULATE (
+    COUNTROWS ( 'Call Log' ),
+    'Call Log'[Type of Intervention] = "Assessment"
+)

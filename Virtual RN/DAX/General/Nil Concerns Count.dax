@@ -1,0 +1,5 @@
+Nil Concerns Count = 
+CALCULATE (
+    COUNTROWS ( 'Call Log' ),
+    'Call Log'[Type of Intervention] = "Nil Concerns"
+)
