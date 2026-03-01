@@ -1,0 +1,5 @@
+Patient Transferred to Hospital Count = 
+CALCULATE (
+    COUNTROWS ( 'Call Log' ),
+    'Call Log'[Transferred to hospital] = "Yes"
+)

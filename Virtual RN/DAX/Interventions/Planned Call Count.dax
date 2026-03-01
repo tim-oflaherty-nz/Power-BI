@@ -1,0 +1,5 @@
+Planned Call Count = 
+CALCULATE (
+    COUNTROWS ( 'Call Log' ),
+    'Call Log'[Planned or Unplanned] = "Planned"
+)

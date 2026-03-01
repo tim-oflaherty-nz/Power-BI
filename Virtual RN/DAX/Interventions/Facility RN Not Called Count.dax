@@ -1,0 +1,5 @@
+Facility RN Not Called Count = 
+CALCULATE (
+    COUNTROWS ( 'Call Log' ),
+    'Call Log'[Facility RN Activated] = "No"
+)

@@ -1,0 +1,2 @@
+GP Not Called Count = 
+CALCULATE ( COUNTROWS ( 'Call Log' ), 'Call Log'[GP Called] = "Yes" )

@@ -1,0 +1,2 @@
+Progress Notes Written Count = 
+CALCULATE ( COUNTROWS ( 'Call Log' ), 'Call Log'[Progress Note] = "Yes" )

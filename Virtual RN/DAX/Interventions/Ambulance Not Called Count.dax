@@ -1,0 +1,2 @@
+Ambulance Not Called Count = 
+CALCULATE ( COUNTROWS ( 'Call Log' ), 'Call Log'[Ambulance Called] = "No" )

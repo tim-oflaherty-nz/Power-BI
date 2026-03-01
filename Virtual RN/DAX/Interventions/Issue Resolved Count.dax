@@ -1,0 +1,2 @@
+Issue Resolved Count = 
+CALCULATE ( COUNTROWS ( 'Call Log' ), 'Call Log'[Issue Resolved] = "Yes" )
