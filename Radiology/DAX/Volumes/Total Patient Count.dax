@@ -1,0 +1,2 @@
+Total Patient Count =
+COUNT ( Fact_Procedures[NHI] )

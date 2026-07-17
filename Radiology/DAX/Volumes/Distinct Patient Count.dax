@@ -1,0 +1,2 @@
+Distinct Patient Count =
+DISTINCTCOUNT ( Fact_Procedures[NHI] )
