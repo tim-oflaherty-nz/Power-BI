@@ -1,0 +1,2 @@
+Budget Variance % =
+DIVIDE ( [Budget vs Actual], [Monthly Budget Amount] )

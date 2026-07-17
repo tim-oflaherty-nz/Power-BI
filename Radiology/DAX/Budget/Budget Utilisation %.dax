@@ -1,0 +1,2 @@
+Budget Utilisation % =
+DIVIDE ( [Actual Expenditure], [Monthly Budget Amount] )

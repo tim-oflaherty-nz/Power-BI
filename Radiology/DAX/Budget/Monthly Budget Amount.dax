@@ -1,0 +1,2 @@
+Monthly Budget Amount =
+SUM ( Fact_Budget[Monthly Budget] )
