@@ -1,0 +1,5 @@
+Avg Procedure-to-Report Days =
+AVERAGEX (
+    FILTER ( Fact_Procedures, NOT ISBLANK ( Fact_Procedures[Procedure Date] ) && NOT ISBLANK ( Fact_Procedures[Reported On] ) ),
+    DATEDIFF ( Fact_Procedures[Procedure Date], Fact_Procedures[Reported On], DAY )
+)

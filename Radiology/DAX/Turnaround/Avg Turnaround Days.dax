@@ -1,0 +1,5 @@
+Avg Turnaround Days =
+AVERAGEX (
+    FILTER ( Fact_Procedures, NOT ISBLANK ( Fact_Procedures[Referred On] ) && NOT ISBLANK ( Fact_Procedures[Reported On] ) ),
+    DATEDIFF ( Fact_Procedures[Referred On], Fact_Procedures[Reported On], DAY )
+)
