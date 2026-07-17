@@ -1,0 +1,2 @@
+Procedures per Patient =
+DIVIDE ( [Procedure Count], [Distinct Patient Count] )

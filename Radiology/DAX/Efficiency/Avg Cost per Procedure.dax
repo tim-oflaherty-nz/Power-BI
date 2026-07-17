@@ -1,0 +1,2 @@
+Avg Cost per Procedure =
+DIVIDE ( [Actual Expenditure], [Procedure Count] )

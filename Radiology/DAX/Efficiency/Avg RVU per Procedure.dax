@@ -1,0 +1,2 @@
+Avg RVU per Procedure =
+DIVIDE ( [Total RVU], [Procedure Count] )
