@@ -1,0 +1,2 @@
+Patient Count YoY % =
+DIVIDE ( [Distinct Patient Count] - [Patient Count PY], [Patient Count PY] )

@@ -1,0 +1,2 @@
+Patient Count PY =
+CALCULATE ( [Distinct Patient Count], SAMEPERIODLASTYEAR ( Dim_Date[Date] ) )

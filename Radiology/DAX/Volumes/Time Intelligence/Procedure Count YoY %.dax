@@ -1,0 +1,2 @@
+Procedure Count YoY % =
+DIVIDE ( [Procedure Count YoY], [Procedure Count PY] )

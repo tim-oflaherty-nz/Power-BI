@@ -1,0 +1,2 @@
+Procedure Count YTD =
+TOTALYTD ( [Procedure Count], Dim_Date[Date] )

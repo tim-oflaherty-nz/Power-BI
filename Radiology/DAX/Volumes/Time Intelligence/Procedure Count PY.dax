@@ -1,0 +1,2 @@
+Procedure Count PY =
+CALCULATE ( [Procedure Count], SAMEPERIODLASTYEAR ( Dim_Date[Date] ) )

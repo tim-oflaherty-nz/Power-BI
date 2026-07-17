@@ -1,0 +1,2 @@
+Procedure Count FYTD =
+TOTALYTD ( [Procedure Count], Dim_Date[Date], "6/30" )
