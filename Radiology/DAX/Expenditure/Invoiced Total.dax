@@ -1,0 +1,2 @@
+Invoiced Total =
+SUM ( Fact_Invoices[Invoice GST Excl Total] )

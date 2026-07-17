@@ -1,0 +1,2 @@
+Rolling 12-Month Expenditure =
+CALCULATE ( [Actual Expenditure], DATESINPERIOD ( Dim_Date[Date], MAX ( Dim_Date[Date] ), -12, MONTH ) )

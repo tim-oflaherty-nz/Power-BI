@@ -1,0 +1,2 @@
+Actual Expenditure (Filing basis) =
+CALCULATE ( [Actual Expenditure], USERELATIONSHIP ( Fact_Procedures[Filed], Dim_Date[Date] ) )
