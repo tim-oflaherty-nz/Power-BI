@@ -1,0 +1,19 @@
+Fact_Budget =
+SELECTCOLUMNS (
+    GENERATE (
+        Dim_Contract,
+        VAR startM =
+            DATE ( YEAR ( Dim_Contract[Active From] ), MONTH ( Dim_Contract[Active From] ), 1 )
+        VAR nMonths =
+            DATEDIFF ( startM, Dim_Contract[Active To], MONTH ) + 1
+        RETURN
+            ADDCOLUMNS (
+                GENERATESERIES ( 0, nMonths - 1, 1 ),
+                "MonthDate", EDATE ( startM, [Value] )
+            )
+    ),
+    "Contract Number", Dim_Contract[Contract Number],
+    "Provider Name", Dim_Contract[Provider Name],
+    "Month", [MonthDate],
+    "Monthly Budget", Dim_Contract[Monthly Budget]
+)

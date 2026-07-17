@@ -1,0 +1,4 @@
+Fact_Procedures[Turnaround Days (Clean)] =
+VAR d = Fact_Procedures[Turnaround Days]
+RETURN
+    IF ( NOT ISBLANK ( d ) && d >= 0, IF ( d > 90, 90, d ) )

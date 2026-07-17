@@ -1,0 +1,2 @@
+Dim_Contract[Contract Months] =
+DATEDIFF ( Dim_Contract[Active From], Dim_Contract[Active To], MONTH ) + 1

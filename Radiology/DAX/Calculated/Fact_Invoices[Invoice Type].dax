@@ -1,0 +1,7 @@
+Fact_Invoices[Invoice Type] =
+SWITCH (
+    TRUE (),
+    CONTAINSSTRING ( Fact_Invoices[Invoice Details], "BPAC" ), "BPAC",
+    CONTAINSSTRING ( Fact_Invoices[Invoice Details], "POAC" ), "POAC",
+    "Unclassified"
+)

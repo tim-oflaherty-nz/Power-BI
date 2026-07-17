@@ -1,0 +1,6 @@
+Fact_Procedures[Turnaround Days (Clean) (bins)] =
+IF (
+    ISBLANK ( 'Fact_Procedures'[Turnaround Days (Clean)] ),
+    BLANK (),
+    INT ( 'Fact_Procedures'[Turnaround Days (Clean)] / 5 ) * 5
+)
