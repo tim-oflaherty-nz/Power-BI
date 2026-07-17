@@ -1,0 +1,2 @@
+Invoiced Total PY =
+CALCULATE ( [Invoiced Total], SAMEPERIODLASTYEAR ( Dim_Date[Date] ) )

@@ -1,0 +1,2 @@
+Actual Expenditure FYTD =
+TOTALYTD ( [Actual Expenditure], Dim_Date[Date], "6/30" )

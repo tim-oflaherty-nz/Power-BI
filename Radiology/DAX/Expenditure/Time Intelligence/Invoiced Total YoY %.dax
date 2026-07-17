@@ -1,0 +1,2 @@
+Invoiced Total YoY % =
+DIVIDE ( [Invoiced Total] - [Invoiced Total PY], [Invoiced Total PY] )

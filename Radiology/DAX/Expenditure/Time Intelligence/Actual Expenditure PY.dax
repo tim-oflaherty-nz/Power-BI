@@ -1,0 +1,2 @@
+Actual Expenditure PY =
+CALCULATE ( [Actual Expenditure], SAMEPERIODLASTYEAR ( Dim_Date[Date] ) )
